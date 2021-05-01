@@ -1,0 +1,3 @@
+Check how heaps work
+Time complexity for pushing on to the heap
+Time complexity for popping off the heap
