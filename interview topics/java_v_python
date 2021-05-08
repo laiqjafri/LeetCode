@@ -1,0 +1,33 @@
+TYPE OF PROGRAMMING LANGUAGE:
+Both Python and Java are high level programming languages. But Python is an interpreted programming language. The
+developers have to use operating system specific Python interpreters to execute the python code directly. They even have
+the option to choose from several implementations of programming language. On the other hand, Java is a compiled
+programming language. The Java code is compiled in to bytecode that runs on any device or platform with JVM (Java
+Virtual Machine). The developers can further port the compiled Java code from one platform to another seamlessly.
+
+PROGRAMMING PARADIGM SUPPORT:
+Each of the two programming languages supports a number of commonly used programming paradigms. In addition to being
+an object oriented programming language, Python also supports functional, imperative, and procedural programming
+paradigms. Java was originally developed as an object oriented, concurrent, and class based programming language. But
+it has been evolving consistently. Java 8 treats functions as first class citizens, while supporting key functional
+programming concepts like lambdas.
+
+CODE RELIABILITY:
+Unlike Java, Python emphasizes explicitly on code reliability. It even enable programmers to keep the code clean,
+readable, and concise. Many developers prefer Python to other programming languages to avoid writing additional code,
+and keep applications maintainable. Each new version of Java comes with a number of new language features to simplify
+software development. Java 9 helps developers to accelerate software development and maintenance by structuring the
+software applications with modules. Each module is further designed as a reusable collection of code. But developers
+have to put extra time and effort to keep the Java code organized and maintainable.
+
+STANDARD LIBRARY:
+
+PERFORMANCE AND SPEED:
+
+MOBILE APP DEVELOPMENT:
+
+MACHINE LEARNING AND DATA SCIENCE:
+
+AGILE AND DEVOPS:
+
+LEARNING CURVE:

@@ -1,0 +1,31 @@
+ES6 refers to version 6 of the ECMA Script (Javascript) programming language. ECMA script is standardized name for
+Javascript, and version 6 is the next version after version 5, which was released in 2011. It is a major enhancement
+to the Javascript language and adds many more features intended to make large scale software development easier.Javascript
+
+ES6 was published in June 2015. It was subsequently renamed to ECMAScript 2015. Web browser support for ES6 is not yet
+complete, though major portions are supported. Major web browsers support some features of ES6. However it is possible
+to use software known as transpiler to convert ES6 code into ES5, which is better supported on most browsers.
+
+1. Constants:
+const x = 10;
+
+2. Block scoped variables and functions:
+With ES6, variables declared using let and const follow block scoping rules just like Java and C++.
+
+3. Arrow functions
+
+4. Default function parameters
+
+5. Rest function parameters
+
+6. String templating
+
+7. Object properties
+ES6 brings a simplified object creation syntax e.g. a = {x, y} => {x: ?, y: ?}
+Computed property names are quite nifty too e.g. var a = {x, y, ["joe" + y]: 4}
+
+8. Formal class definition syntax
+
+9. Inheritance
+
+

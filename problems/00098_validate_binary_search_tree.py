@@ -28,17 +28,44 @@ class TreeNode:
 
 
 class Solution:
-    def isValidBST(self, root: TreeNode, upper = float('inf'), lower = float('-inf')) -> bool:
-        if not root:
-            return True
+    def isValidBST(self, root: TreeNode, min_=float("-inf"), max_=float("inf")) -> bool:
+        return (
+                   not root
+               ) or (
+                min_ < root.val < max_ and
+                self.isValidBST(root.left, min_, root.val) and
+                self.isValidBST(root.right, root.val, max_)
+        )
 
-        if not lower < root.val < upper:
-            return False
+    # def isValidBST(self, root: TreeNode, min_=float("-inf"), max_=float("inf")) -> bool:
+    #     is_valid = True
+    #     last_traversed = float("-inf")
+    #
+    #     def recurse(node):
+    #         nonlocal is_valid
+    #         nonlocal last_traversed
+    #         if node and is_valid:
+    #             recurse(node.left)
+    #             if node.val <= last_traversed:
+    #                 is_valid = False
+    #             else:
+    #                 last_traversed = node.val
+    #             recurse(node.right)
+    #
+    #     recurse(root)
+    #     return is_valid
 
-        if not self.isValidBST(root.left, root.val, lower):
-            return False
-
-        if not self.isValidBST(root.right, upper, root.val):
-            return False
-
-        return True
+    # def isValidBST(self, root: TreeNode, upper = float('inf'), lower = float('-inf')) -> bool:
+    #     if not root:
+    #         return True
+    #
+    #     if not lower < root.val < upper:
+    #         return False
+    #
+    #     if not self.isValidBST(root.left, root.val, lower):
+    #         return False
+    #
+    #     if not self.isValidBST(root.right, upper, root.val):
+    #         return False
+    #
+    #     return True

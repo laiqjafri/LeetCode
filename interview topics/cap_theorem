@@ -1,0 +1,49 @@
+C -- Consistency
+A -- Availability
+P -- Partition Tolerance
+
+The theorem talks about the compromise that you have to make between consistency and availability if your system suffers
+partition tolerance.
+
+Let us say you are starting your own bank. You start simple with only one customer account and 2 atms. Your ATMs only
+support 3 different operations:
+1. You can deposit money
+2. You can withdraw money
+3. And check your balance
+
+Because you love distributed systems and dont want to buy more hardware, you store the account balance in the atms
+themselves. Each ATM has a copy of the account balance. When your customer walks up to the atm and inserts their card,
+if everything is working the system is simple. If they deposit or withdraw the money you update the balance on both the
+atms. The system is consistent. And the system is available at all times.
+
+Lets say the system breaks. There are 3 types of issues that can happen:
+
+1. The ATM that customer walks to is broken. Simple enough, no deposit/withdraw happens. Direct the customer to the other
+ATM
+2. The ATM that customer walks to is not broken, the other one is broken.
+3. No ATM is broken, but the communication between ATMs is slow or down.
+
+The distributed system has suffered a partition in this case.
+
+What should system do next when this partition happens? This is the design decision that the CAP theorem talks about.
+The system has to then make a choice to either be consistent or available but it cant do both. If you have a consistent
+design, the ATM will say sorry I cannot update the balance at the moment, since I cannot update the balance in the other
+ATM. Or you can do an available design, so when customer walks to the ATM, it accepts the update and tries its best. So
+when the other ATM is back online, it syncs the changes to the other ATM. With this design, the system is more available
+but the two ATMs are inconsistent in storage of the balance.
+
+This is the CAP theorem. When you design your system, if there never are partitions, you can make your system both
+consistent and available, but when there is a partition, you need to chose between the two.
+
+Not exactly, because in the real world we talk about degrees of consistency and degrees of availability and make trade
+offs between the two. So for example when a partition happens, we can make our system accept deposits, but not offer
+balance information or allow withdraws. So the system is partially available, but inconsistent. Or we can allow the user
+to make deposits and check the balances, but when the system shows balance it marks it as tentative. This is a partially
+available design. Or we can make our system more flexible by allowing them to make rate limited withdrawals.
+
+Sacrificing consistency is not the only way we can up the availability of our system. For example for the above example,
+we can increase availability by:
+1. Adding battery backups to the ATMs so they are less likely to go down in the event of power outage
+2. We can armour plate the network connection between them so it is less likely to go down
+3. We can buy redundant connections so if one connection goes down it can use another one
+4. We can write our software better
