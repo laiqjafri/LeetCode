@@ -1,0 +1,50 @@
+A data structure is a way of organizing data so that it can be used effectively.
+
+They are essential ingredients in creating fast and powerful algorithms.
+
+An abstract data type (ADT) is an abstraction of a data structure which provides only interface to which a data structure
+must adhere to.
+
+Abstraction (ADT)                                   Implementation (DS)
+List                                                DynamicList, LinkedList, ArrayList
+Queue                                               Queue, Stack
+Map                                                 HashMap, TreeMap
+Vehicle                                             Golf Cart, Bicycle, Car
+
+Complexity
+            Static Array    Dynamic Array
+Access      O(1)            O(1)
+Search      O(n)            O(n)
+Insertion   N/A             O(n)
+Appending   N/A             O(1)
+Deletion    N/A             O(n)
+
+                    Singly Linked List              Doubly Linked List
+Search              O(n)                            O(n)
+Insert at Head      O(1)                            O(1)
+Insert at Tail      O(1)                            O(1)
+Remove in middle    O(n)                            O(n)
+Remove From Head    O(1)                            O(1)
+Remove From Tail    O(n)                            O(1)
+
+                Stack
+Pushing         O(1)
+Popping         O(1)
+Peeking         O(1)
+Searching       O(n)
+Size            O(1)
+
+                Queue
+Enqueue         O(1)
+Dequeue         O(1)
+Peeking         O(1)
+Contains        O(n)
+Removal         O(n)
+Is Empty        O(1)
+
+                PQ with a binary heap implementation
+Construction    O(n)
+Polling         O(log(n))
+Peeking         O(1)
+Adding          O(log(n))
+

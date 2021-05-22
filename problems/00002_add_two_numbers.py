@@ -37,10 +37,14 @@ class Solution:
 
             if l1 and l2:
                 t = l1.val + l2.val + carry
+                l1 = l1.next
+                l2 = l2.next
             elif l1:
                 t = l1.val + carry
+                l1 = l1.next
             elif l2:
                 t = l2.val + carry
+                l2 = l2.next
 
             total = t % 10
             carry = t // 10
@@ -50,11 +54,6 @@ class Solution:
             else:
                 curr.next = ListNode(total)
                 curr = curr.next
-
-            if l1:
-                l1 = l1.next
-            if l2:
-                l2 = l2.next
 
         if carry:
             curr.next = ListNode( carry )
