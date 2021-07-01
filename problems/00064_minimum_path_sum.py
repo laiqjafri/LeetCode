@@ -32,11 +32,11 @@
 # n == grid[i].length
 # 1 <= m, n <= 200
 # 0 <= grid[i][j] <= 100
-from typing import List
+from typing import List, Union
 
 
 class Solution:
-    def minPathSum(self, grid: List[List[int]], i = 0, j = 0, memo = None) -> int:
+    def minPathSum(self, grid: List[List[int]], i=0, j=0, memo=None) -> Union[int, float]:
         if memo is None:
             memo = {}
         elif (i, j) in memo:
